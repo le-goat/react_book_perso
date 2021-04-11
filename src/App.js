@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import React from "react";
+// import ReactDOM from 'react-dom';
+
+import { GoogleLogin } from 'react-google-login';
+
+const responseGoogle = (response) => {
+  console.log(response);
+  console.log(response.profileObj)
+}
+
+// ReactDOM.render(
+//     <GoogleLogin
+//         clientId="377720379934-goc16tv7jmf7s36csfrqbu0e4udicrju.apps.googleusercontent.com"
+//         buttonText="Login"
+//         onSuccess={responseGoogle}
+//         onFailure={responseGoogle}
+//         cookiePolicy={'single_host_origin'}
+//     />,
+//     document.getElementById('googleButton')
+// );
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GoogleLogin
+          clientId='377720379934-goc16tv7jmf7s36csfrqbu0e4udicrju.apps.googleusercontent.com'
+          buttonText="Login to see my photos"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={'single_host_origin'}
+          isSignedIn={true}/>
     </div>
   );
 }
