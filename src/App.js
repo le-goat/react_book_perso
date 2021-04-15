@@ -4,6 +4,7 @@ import React, {useState} from "react";
 // import ReactDOM from 'react-dom';
 import GetData from "./components/js/Corps";
 import { GoogleLogin } from 'react-google-login';
+import Header from "./components/js/Header";
 
 const responseGoogle = (response) => {
   console.log(response);
@@ -39,7 +40,7 @@ console.log({accessToken});
             cookiePolicy={'single_host_origin'}
             isSignedIn={true}
             accessType="code"
-            scope="https://www.googleapis.com/auth/photoslibrary.readonly"
+            scope="https://www.googleapis.com/auth/photoslibrary.sharing"
         />
         {accessToken !== null && <GetData accessToken={accessToken}/>}
     </div>
