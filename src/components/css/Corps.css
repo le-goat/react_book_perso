@@ -7,8 +7,8 @@
 }
 
 .data > div {
-    height: 200px;
-    width: 300px;
+    height: auto;
+    width: auto;
     /*background-color: royalblue;*/
     padding: 20px;
     margin: 10px;
@@ -16,5 +16,14 @@
 }
 
 .fiche_album {
-    filter: opacity(80%);
+    /*filter: opacity(30%);*/
+    overflow: hidden;
+}
+.fiche_album > h2, h4 {
+    z-index: 20;
+}
+
+.couverture_album {
+    height: auto;
+    overflow: hidden;
 }
